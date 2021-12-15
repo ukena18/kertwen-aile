@@ -1,0 +1,57 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+        <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{post.author.profile.image.url}}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'blog-user' post.author.username %}">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d,y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'blog-detail' post.id %}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+
+          </div>
+
+        </article>
+            {% for comment in comments %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card card-white post">
+                                    <div class="post-heading">
+                                        <div class="float-left image">
+
+                                           <img class="rounded-circle article-img" src="{{comment.user.profile.image.url}}">
+                                        </div>
+                                        <div class="float-left meta">
+                                            <div class="title h5">
+                                                <a href="#"><b>{{comment.user.username}}</b></a>
+                                                <small>made a post.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-description">
+                                        <p>{{comment.content}}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+            {% endfor %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{form|crispy}}
+    <div>
+            <button class="btn btn-success btn-sm mt-1 mb-1" type="submit" >Comment</button>
+    </div>
+</form>
+{% endblock %}
+
+
+
