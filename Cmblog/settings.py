@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-f2uny=@kv=5m*ugzc$x0qxizplko_3d%0@l3zrbip6h8j3jg6&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kertwen-aile.herokuapp.com',"127.0.0.1"]
 
 # Application definition
 
@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Cmblog.urls'
@@ -122,7 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 # for photos and other
 MEDIA_URL = '/media/'
 # send all the media to that folder
