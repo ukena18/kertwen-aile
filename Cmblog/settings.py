@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-f2uny=@kv=5m*ugzc$x0qxizplko_3d%0@l3zrbip6h8j3jg6&'
+SECRET_KEY = "
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -154,10 +154,10 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 EMAIL_HOST_USER = "zackberge18@gmail.com"
-EMAIL_HOST_PASSWORD = "2125253032"
+EMAIL_HOST_PASSWORD =""
 
-AWS_ACCESS_KEY_ID = 'AKIA34SYHWLVCZ2B5EWL'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = "
+AWS_SECRET_ACCESS_KEY = "
 AWS_STORAGE_BUCKET_NAME = 'cmblog-files'
 
 AWS_S3_FILE_OVERWRITE = False
