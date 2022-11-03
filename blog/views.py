@@ -91,8 +91,8 @@ class PostCreateView(LoginRequiredMixin,CreateView):
     # specify the fields
     fields = ['title', 'content']
 
-    # ckeck if form is valid and this is built in func
-    # rewrite form_valid func so when it check it is gonna run that func
+    ckeck if form is valid and this is built in func
+    rewrite form_valid func so when it check it is gonna run that func
     def form_valid(self, form):
         # for author send current user to form
         form.instance.author = self.request.user
