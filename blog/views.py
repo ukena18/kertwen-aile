@@ -78,7 +78,7 @@ class UserPostListView(LoginRequiredMixin,ListView):
         return Post.objects.filter(author=user).order_by('-date_posted')
 
 
-#login required and class-base views
+login required and class-base views
 class PostDetailView(LoginRequiredMixin,DetailView):
     # chooose the model
     model = Post
