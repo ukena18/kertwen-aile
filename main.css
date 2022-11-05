@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+}
+
+.main-page {
+  display: flex;
+}
+.banner-img {
+  margin: auto;
+  width: 80%;
+  height: 200px;
+}
